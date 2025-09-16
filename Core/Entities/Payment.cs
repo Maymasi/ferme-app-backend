@@ -15,5 +15,6 @@ namespace Core.Entities
         public DateTime periodStartDate { get; set; }
         public DateTime periodEndDate { get; set; }
         public string employeeId { get; set; }
+        public Employee employee { get; set; }
     }
 }

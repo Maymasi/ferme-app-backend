@@ -12,5 +12,6 @@ namespace Core.Entities
         public decimal quantity { get; set; }
         public decimal initPrice { get; set; }
         public string expenseId { get; set; }
+        public Expense expense { get; set; }
     }
 }
