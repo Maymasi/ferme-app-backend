@@ -15,6 +15,7 @@ namespace Core.Entities
         public decimal unitSellingPrice { get; set; }
         public decimal totalRevenue {  get; set; }
         public string farmId { get; set; }
+        public Farm farm {  get; set; }
 
     }
 }

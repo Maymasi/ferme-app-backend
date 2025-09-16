@@ -11,6 +11,10 @@ namespace Core.Entities
         public decimal defaultAmount {  get; set; }
         public DateTime cycleStartDate { get; set; } 
         public string farmId { get; set; }
+        public Farm farm { get; set; }
+        public ICollection<Payment> payments { get; set; }
+        public ICollection<Attendance> attedances { get; set; }
+
 
     }
 }

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Core.Entities
+﻿namespace Core.Entities
 {
     public class Farm
     {
@@ -13,5 +7,9 @@ namespace Core.Entities
         public string address { get; set; }
         public decimal latitude { get; set; }
         public decimal longitude { get; set; }
+        public ICollection<Manager> managers { get; set; }
+        public ICollection<Employee> employees { get; set; }
+        public ICollection<Crop> crops { get; set; }
+        public ICollection<Expense> expenses { get; set; }
     }
 }
