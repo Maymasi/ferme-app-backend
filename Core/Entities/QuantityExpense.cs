@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Core.Entities
 {
-    public class QuantityExpense
+    public class QuantityExpense : Expense
     {
         public string id { get; set; }
         public decimal quantity { get; set; }
