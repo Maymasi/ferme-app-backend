@@ -1,6 +1,6 @@
 ﻿namespace Core.Entities
 {
-    public class RecurringExpense
+    public class RecurringExpense : Expense
     {
         public string id {  get; set; }
         public string month { get; set; }
