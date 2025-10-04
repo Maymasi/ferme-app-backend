@@ -9,5 +9,6 @@ namespace Core.Interfaces
         ValueTask<IEnumerable<Farm>> GetAllAsync();
         ValueTask UpdateAsync(Farm farm);
         ValueTask DeleteAsync(int id);
+        int SaveChanges();
     }
 }
