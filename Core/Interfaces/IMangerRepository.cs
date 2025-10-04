@@ -9,7 +9,6 @@ namespace Core.Interfaces
         ValueTask<IEnumerable<Manager>> GetAllAsync();
         ValueTask UpdateAsync(Manager manager);
         ValueTask DeleteAsync(string id);
-
-
+        int SaveChanges();
     }
 }

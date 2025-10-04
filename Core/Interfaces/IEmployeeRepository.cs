@@ -12,9 +12,10 @@ namespace Core.Interfaces
         ValueTask AddAsync(Employee employee);
         ValueTask<Employee> GetByIdAsync(string id);
         ValueTask<IEnumerable<Employee>> GetAllAsync();
-        ValueTask<IQueryable<Employee>> GetByNameAsync(string name);
+        ValueTask<IEnumerable<Employee>> GetByNameAsync(string name);
 
         ValueTask UpdateAsync(Employee employee);
         ValueTask DeleteAsync(string id);
+        int SaveChanges();
     }
 }
