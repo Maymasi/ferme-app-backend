@@ -1,14 +1,9 @@
 ﻿using Core.Entities;
 namespace Core.Interfaces
 {
-    public interface ICropRepository
+    public interface ICropRepository : IRepository<Crop>
     {
-        ValueTask AddAsync(Crop crop);
-        ValueTask<Crop> GetByIdAsync(string id);
         ValueTask<IEnumerable<Crop>> GetByYear(string year);
-        ValueTask<IEnumerable<Crop>> GetAllAsync();
-        ValueTask UpdateAsync(Crop crop);
-        ValueTask DeleteAsync(string id);
-        int SaveChanges();
+
     }
 }
