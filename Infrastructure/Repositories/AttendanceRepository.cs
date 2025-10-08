@@ -6,49 +6,28 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Repositories
 {
-    internal class AttendanceRepository : IAttendanceRepository
+    internal class AttendanceRepository : Repository<Attendance>, IAttendanceRepository 
     {
-        private ApplicationDbContext _context;
-        public AttendanceRepository(ApplicationDbContext context)
-        {
-            _context = context;
-        }
-
-        public async ValueTask AddAsync(Attendance attendance) =>
-            await _context.Attendances.AddAsync(attendance);
-
-        public async ValueTask DeleteAsync(string id)
-        {
-            var attendance = await _context.Attendances.FindAsync(id);
-            _context.Attendances.Remove(attendance);
-        }
+        public AttendanceRepository(ApplicationDbContext context) : base(context) {}
 
         public async ValueTask<bool> ExistAsync(string employeeId, DateTime date)
         {
-            var attendance =  _context.Attendances.Any(x => x.employeeId == employeeId && x.date == date);
+            var attendance =  await _entity.AnyAsync(x => x.employeeId == employeeId && x.date == date);
             return attendance;
         }
 
         public async ValueTask<IEnumerable<Attendance>> GetByDateAsync(DateTime date)
         {
-            var attendance = await _context.Attendances.Where(x => x.date == date).ToListAsync();
-            return attendance;
+            var attendances = await _entity.Where(x => x.date == date).ToListAsync();
+            return attendances;
         }
 
-        public async ValueTask<Attendance> GetByIdAsync(string id)
+
+        public async ValueTask<IEnumerable<Attendance>> GetByEmployeeAsync(string employeeId)
         {
-            var attendance = await _context.Attendances.FindAsync(id);
-            return attendance;
+            var attendances = await _entity.Where(x => x.employeeId == employeeId).ToListAsync();
+            return attendances;
         }
 
-        public async ValueTask<IEnumerable<Attendance>> GetByEmployeeAsync(string EmployeeId)
-        {
-            var attendance = await _context.Attendances.Where(x => x.employeeId == EmployeeId).ToListAsync();
-            return attendance;
-        }
-
-        public async ValueTask UpdateAsync(Attendance attendance) =>
-            _context.Attendances.Update(attendance);
-        public int SaveChanges() => _context.SaveChanges();
     }
 }
