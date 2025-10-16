@@ -33,7 +33,8 @@ namespace Infrastructure.Repositories
             _entity.Remove(oData);
         }
 
-        public int SaveChanges() => _context.SaveChanges();
+        public async Task<int> SaveChanges() =>
+            await _context.SaveChangesAsync();
 
     }
 
