@@ -9,6 +9,6 @@ namespace Core.Interfaces
         ValueTask<IEnumerable<TEntity>> GetAllAsync();
         ValueTask UpdateAsync(TEntity entity);
         ValueTask DeleteAsync(string id);
-        int SaveChanges();
+        Task<int> SaveChanges();
     }
 }
