@@ -1,5 +1,4 @@
-﻿
-namespace Application.Responses
+﻿namespace Application.Responses
 {
     public class baseCommandResponse
     {
