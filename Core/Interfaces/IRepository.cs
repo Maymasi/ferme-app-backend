@@ -10,5 +10,6 @@ namespace Core.Interfaces
         ValueTask UpdateAsync(TEntity entity);
         ValueTask DeleteAsync(string id);
         Task<int> SaveChanges();
+
     }
 }
