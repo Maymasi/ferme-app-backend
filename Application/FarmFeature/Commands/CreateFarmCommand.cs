@@ -1,10 +1,9 @@
 ﻿using Application.DTOs.Requests;
-using Application.Responses;
 using MediatR;
 
 namespace Application.FarmFeature.Commands
 {
-    public class CreateFarmCommand : IRequest<baseCommandResponse>
+    public class CreateFarmCommand : IRequest<string>
     {
         public required FarmRequestDto farmRequestDto { get; set; }
     }

@@ -7,8 +7,11 @@ namespace Application.helper
     internal class AutoMapper : Profile
     {
         public AutoMapper() {
+            //source : FarmRequestDto to destination : Farm
             CreateMap<FarmRequestDto, Farm>();
-            //CreateMap<Farm, >();
+            CreateMap<Farm, FarmRequestDto>();
+            CreateMap<ManagerRequestDto, Manager>();
+            CreateMap<Manager, ManagerRequestDto>();
         }
     }
 }

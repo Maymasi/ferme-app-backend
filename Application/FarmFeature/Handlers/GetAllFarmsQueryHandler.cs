@@ -23,4 +23,5 @@ namespace Application.FarmFeature.Handlers
             var farmResponseDtos = _mapper.Map<List<FarmResponseDto>>(farms);
             return farmResponseDtos;
         }
+    }
 }

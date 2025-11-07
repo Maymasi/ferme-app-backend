@@ -2,7 +2,7 @@
 using System;
 namespace Core.Interfaces
 {
-    public interface IManagerRespository : IRepository<Manager>
+    public interface IManagerRepository : IRepository<Manager>
     {
         ValueTask<bool> ExistsByEmail(string email);
     }
