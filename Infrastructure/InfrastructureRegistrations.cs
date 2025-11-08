@@ -19,6 +19,8 @@ namespace Infrastructure
             services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 
             services.AddScoped<IPasswordHasher, BcryptPasswordHasher>();
+            services.AddScoped<ITokenService, JwtTokenService>();
+
 
         }
     }

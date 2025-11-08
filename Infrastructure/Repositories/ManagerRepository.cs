@@ -13,5 +13,10 @@ namespace Infrastructure.Repositories
             var exist = await _entity.AnyAsync(a => a.email == email);
             return exist;
         }
+
+        public async ValueTask<Manager> GetByEmailAsync(string email)
+        {
+            return await _entity.FirstOrDefaultAsync(a => a.email.ToLower() == email.ToLower());
+        }
     }
 }
