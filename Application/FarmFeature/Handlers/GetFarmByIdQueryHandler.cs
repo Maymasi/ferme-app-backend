@@ -1,9 +1,10 @@
 ﻿using Application.DTOs.Responses;
 using Application.FarmFeature.Queries;
 using AutoMapper;
+using Core.Entities;
+using Core.Exceptions;
 using Core.Interfaces;
 using MediatR;
-using Core.Entities;
 
 namespace Application.FarmFeature.Handlers
 {
@@ -20,9 +21,12 @@ namespace Application.FarmFeature.Handlers
         public async Task<FarmResponseDto> Handle(GetFarmByIdQuery query,CancellationToken cancellationToken)
         {
             var farmEntity = await _repository.GetByIdAsync(query.id);
+
+            if (farmEntity == null)
+                throw new EntityNotFoundException("Farm",query.id);
+
             var farmDto = _mapper.Map<FarmResponseDto>(farmEntity);
             return farmDto;
-
         }
     }
 }

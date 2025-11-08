@@ -27,6 +27,7 @@ namespace Infrastructure.Repositories
         public async ValueTask UpdateAsync(TEntity entity) =>
             _entity.Update(entity);
 
+
         public async ValueTask DeleteAsync(string id)
         {
             var oData = await _entity.FindAsync(id);
