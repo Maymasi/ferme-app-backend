@@ -482,5 +482,14 @@ $RECYCLE.BIN/
 
 # Vim temporary swap files
 *.swp
-a p p s e t t i n g s . j s o n  
- 
+
+# Fichiers de configuration sensibles
+# Ces fichiers contiennent des secrets (clés API, chaînes de connexion, etc.)
+appsettings.json
+appsettings.*.json
+
+# Fichiers de configuration spécifiques à la machine locale (Visual Studio, etc.)
+*.localsettings
+a p p s e t t i n g s . j s o n 
+ 
+ 
