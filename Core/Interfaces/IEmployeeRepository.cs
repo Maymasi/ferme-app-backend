@@ -3,6 +3,6 @@ namespace Core.Interfaces
 {
     public interface IEmployeeRepository : IRepository<Employee>
     {
-        ValueTask<IEnumerable<Employee>> GetByNameAsync(string name);
+        ValueTask<Employee?> GetByFullNameAsync(string fName, string lName);
     }
 }
