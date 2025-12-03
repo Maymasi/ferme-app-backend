@@ -28,4 +28,9 @@
     <ProjectReference Include="..\Core\Core.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="EmployeeFeature\Validations\" />
+    <Folder Include="EmployeeFeature\Queries\" />
+  </ItemGroup>
+
 </Project>

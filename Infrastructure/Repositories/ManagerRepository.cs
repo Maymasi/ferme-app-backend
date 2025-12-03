@@ -14,7 +14,8 @@ namespace Infrastructure.Repositories
             return exist;
         }
 
-        public async ValueTask<Manager> GetByEmailAsync(string email)
+
+        public async ValueTask<Manager> GetByEmail(string email)
         {
             return await _entity.FirstOrDefaultAsync(a => a.email.ToLower() == email.ToLower());
         }
